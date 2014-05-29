@@ -11,6 +11,7 @@
   <% if user_signed_in? %>
     <%= link_to 'Edit profile', edit_user_registration_path %>
     <%= link_to 'Good bye', destroy_user_session_path, method: 'delete' %>
+    <hr/>
   <% end %>
 
 <%= yield %>
