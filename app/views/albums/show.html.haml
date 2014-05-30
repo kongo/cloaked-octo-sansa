@@ -1,0 +1,7 @@
+%h1= @album.title
+%hr
+
+%div{style: "min-height: 600px;"}
+  - @album.pictures.each do |p|
+    = link_to p.image.url do
+      = image_tag p.image.thumb

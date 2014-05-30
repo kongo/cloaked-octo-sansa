@@ -13,4 +13,8 @@ class AlbumsController < ApplicationController
     redirect_to albums_path
   end
 
+  def show
+    @album = Album.find params[:id]
+  end
+
 end
