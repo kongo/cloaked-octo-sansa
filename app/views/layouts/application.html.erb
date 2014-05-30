@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CloakedOctoSansa</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>CloakedOctoSansa</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <% if user_signed_in? %>
-    <%= link_to 'Edit profile', edit_user_registration_path %>
-    <%= link_to 'Good bye', destroy_user_session_path, method: 'delete' %>
-    <hr/>
-  <% end %>
+    <div class="container">
 
-<%= yield %>
+      <!-- Static navbar -->
+      <% if user_signed_in? %>
+        <div class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">CloakedOctoSansa</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li>
+                  <%= link_to 'Edit profile', edit_user_registration_path %>
+                </li>
 
-</body>
+                <li>
+                  <%= link_to 'Good bye', destroy_user_session_path, method: 'delete' %>
+                </li>
+              </ul>
+
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="#" onclick="return false;">
+                    <%= gravatar_image_tag current_user.email, gravatar: { size: 16 } %>
+                    <%= current_user.email %>
+                  </a>
+                </li>
+              </ul>
+
+
+            </div><!--/.nav-collapse -->
+          </div><!--/.container-fluid -->
+        </div>
+      <% end %>
+
+      <div class="jumbotron">
+        <%= yield %>
+      </div>
+
+    </div> <!-- /container -->
+
+
+  </body>
 </html>
