@@ -1,0 +1,15 @@
+%h1 Albums
+
+%div{style: "min-height: 600px;"}
+  - @albums.each do |a|
+    = link_to album_path(a) do
+      %div{style: "border: 1px solid lightgray; width: 120px; height: auto; min-height: 132px; text-align:center; padding: 5px; margin: 10px; float: left"}
+        - if pic = a.pictures.first
+          = image_tag pic.image.thumb.url
+        - else
+          %div{style: "width: 100px; height: 100px;"}
+
+        - if a.title.present? 
+          = a.title
+        -else
+          %i untitled
