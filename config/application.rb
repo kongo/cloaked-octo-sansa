@@ -21,5 +21,6 @@ module CloakedOctoSansa
     # config.i18n.default_locale = :de
     config.generators.helper = false
     config.generators.test_framework = false
+    config.autoload_paths += %W(#{config.root}/uploaders)
   end
 end
