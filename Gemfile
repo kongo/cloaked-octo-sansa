@@ -40,3 +40,4 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'gravatar_image_tag'
+gem 'bootstrap-sass'
