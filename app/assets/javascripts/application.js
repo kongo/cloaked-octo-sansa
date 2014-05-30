@@ -11,7 +11,19 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require load-image.min.js
+//= require canvas-to-blob.min.js
+//= require jquery.blueimp-gallery.min.js
+//= require jquery.iframe-transport.js
+//= require jquery.fileupload.js
+//= require jquery.fileupload-process.js
+//= require jquery.fileupload-image.js
+//= require jquery.fileupload-audio.js
+//= require jquery.fileupload-video.js
+//= require jquery.fileupload-validate.js
+//= require jquery.fileupload-angular.js
 //= require_tree .
