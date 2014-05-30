@@ -1,5 +1,9 @@
 %h1 Albums
 
+= form_for Album.new do |f|
+  = f.text_field :title, placeholder: 'Title'
+  = f.submit 'Create album'
+
 %div{style: "min-height: 600px;"}
   - @albums.each do |a|
     = link_to album_path(a) do
